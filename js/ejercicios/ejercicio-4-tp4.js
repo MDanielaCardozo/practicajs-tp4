@@ -27,9 +27,19 @@ let sofa = new Producto('3399', 'Sofá', '$90.000');
 let mesaComedor = new Producto('3377', 'Mesa de comedor', '$50.000');
 let sillaComedor = new Producto('3366', 'Silla de comedor', '$25.000');
 
+let objeto = Object.keys(sofa,mesaComedor,sillaComedor);
+
+for(let indice = 0; indice < 3; indice ++){
+    console.log(`<br>${objeto[indice]}: ${sofa[objeto[indice]]}`)
+}
+for(let indice = 0; indice < 3; indice ++){
+    console.log(`<br>${objeto[indice]}: ${mesaComedor[objeto[indice]]}`)
+}
+for(let indice = 0; indice < 3; indice ++){
+    console.log(`<br>${objeto[indice]}: ${sillaComedor[objeto[indice]]}`)
+}
+
 sofa.imprimeDatos();
 mesaComedor.imprimeDatos();
 sillaComedor.imprimeDatos();
 
-let objeto = Object.keys(sofa, mesaComedor, sillaComedor);
-console.log(objeto);

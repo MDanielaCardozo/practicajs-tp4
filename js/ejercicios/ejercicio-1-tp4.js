@@ -21,6 +21,8 @@ auto.estado();
 
 let claves = Object.keys(auto);
 
+console.log(claves);
+
 for(let indice = 0; indice < 4; indice ++){
     document.write(`<br>${claves[indice]}: ${auto[claves[indice]]}`)
 }
