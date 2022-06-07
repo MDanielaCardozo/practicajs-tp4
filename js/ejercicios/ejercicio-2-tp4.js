@@ -52,7 +52,7 @@ class Cuenta{
     }
 }
 
-let cuentaAlex = new Cuenta('Alex', '0', 'Desactivada');
+let cuentaAlex = new Cuenta('Alex', 0, 'Desactivada');
 cuentaAlex.ingresar();
 cuentaAlex.extraer();
 cuentaAlex.informar();
