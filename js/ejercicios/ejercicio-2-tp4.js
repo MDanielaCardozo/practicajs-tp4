@@ -16,14 +16,44 @@ class Cuenta{
         this.propiedadEstado = propiedadEstado;
     }
     ingresar(){
-
+        let deposito = parseFloat(prompt('Ingrese el monto de dinero que desea depositar.'));
+        if(deposito != null){
+           this.propiedadSaldo = this.propiedadSaldo + deposito;
+           return alert(`El deposito se realizo exitosamente.`); 
+        } else {
+            return alert(`No se puedo realizar el deposito.`);
+        }
     }
     extraer(){
-
+        let extraccion = parseFloat(prompt('Ingrese el monto que desea extraer.'));
+        if(extraccion != null && this.propiedadSaldo >= extraccion){
+            this.propiedadSaldo = this.propiedadSaldo - extraccion;
+            return alert(`La extraccion se realizo exitosamente.`); 
+         } else {
+             return alert(`No se puedo realizar la extraccion.`);
+         }
     }
     informar(){
-
+        if(this.propiedadSaldo > 0){
+            this.propiedadEstado = "Activa";
+            return alert('Su cuenta se encuentra activa.');
+        } else {
+            this.propiedadEstado = "desactiva";
+            return alert('Debe ingresar dinero para mantener su cuenta activa.');
+        }
+    }
+    mostrarDatos(){
+        document.write(`<br>
+        <ul>
+        <li>Titular de la cuenta: ${this.propiedadTitular}</li>
+        <li>Saldo: ${this.propiedadSaldo}</li>
+        <li>Estado: ${this.propiedadEstado}</li>
+        </ul>`);
     }
 }
 
-let cuentaAlex = new Cuenta('Alex', '0',)
+let cuentaAlex = new Cuenta('Alex', '0', 'Desactivada');
+cuentaAlex.ingresar();
+cuentaAlex.extraer();
+cuentaAlex.informar();
+cuentaAlex.mostrarDatos();
