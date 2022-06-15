@@ -6,7 +6,17 @@ mas los métodos necesarios para modificar y mostrar sus propiedades, calcular e
 class Rectangulo {
     constructor ( altura = 0, ancho = 0 ) {
       this._altura = altura;
-      this._width = ancho;
+      this._ancho = ancho;
+    }
+
+    mostrarDatos(){
+      document.write(`<br>
+      <ul>
+      <li>Alto: ${this.altura}</li>
+      <li>Ancho: ${this.ancho}</li>
+      <li>Perimetro: ${this.perimetro}</li>
+      <li>Area: ${this.area}</li>
+      </br>`)
     }
   
     set cambiarAltura( valor ) {
@@ -27,4 +37,9 @@ class Rectangulo {
   }
 
   let rectanguloUno = new Rectangulo(2, 4);
+  rectanguloUno.mostrarDatos();
+
+
+  
+  
   
